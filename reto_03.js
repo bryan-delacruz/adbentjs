@@ -1,13 +1,12 @@
 function distributeGifts(packOfGifts, reindeers) {
-    let sizePack = 0
-    packOfGifts.forEach(e => {
-      sizePack = sizePack + e.length
-    })
+
+  let pesoMax = reindeers.join("").length * 2;
+  let pesoCaja = packOfGifts.join("").length;
   
-    let reindeerLoadSize = 0
-    reindeers.forEach(e => {
-      reindeerLoadSize = reindeerLoadSize + e.length*2
-    })
-  
-    return Math.floor(reindeerLoadSize / sizePack)
-  }
+  return (pesoMax / pesoCaja) >> 0;
+}
+
+const packOfGifts = ["book", "doll", "ball"];
+const reindeers = ["dasher", "dancer"];
+
+distributeGifts(packOfGifts, reindeers);
